@@ -1,10 +1,12 @@
 <!doctype html>
 <?php
 $index;
-$dir; // remove $ and add string datatype
+
+$dir=["up","down","left","right"];// for page only
+$dirNum; // remove $ and add int datatype
 $msec; // remove $ and add int datatype
 //on ardurino swap $ for &
-sscanf(file_get_contents("data.txt"),"%d %s : %d",$index,$dir,$msec);
+sscanf(file_get_contents("data.txt"),"%d %d : %d",$index,$dirNum,$msec);
 $txt = $index +1 ." ".$_GET['dir'] . " : ".$_GET['sec'];
 $myfile = file_put_contents("data.txt",$txt);
 
@@ -35,17 +37,17 @@ $myfile = file_put_contents("data.txt",$txt);
             <div class="container">
             <?php if($_GET['dir'] && $_GET['sec']) {$divSize="6";} else {$divSize="12";} ?>
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get" class="col-md-<?=$divSize?>">
-                <input type="radio" name="dir" value="up">&uarr;<br>
-                <input type="radio" name="dir" value="down">&darr;<br>
-                <input type="radio" name="dir" value="left">&larr;<br>
-                <input type="radio" name="dir" value="right">&rarr;<br>
+                <input type="radio" name="dir" value="0">&uarr;<br>
+                <input type="radio" name="dir" value="1">&darr;<br>
+                <input type="radio" name="dir" value="2">&larr;<br>
+                <input type="radio" name="dir" value="3">&rarr;<br>
                 <input type="number" name="sec">
                 <input type="submit">
             </form>
                 <div class="col-md-<?=$divSize?>">
                     <?php
-
-                    echo("you told the bot to move $dir for $msec milliseconds");
+                    
+                    echo("you told the bot to move ".$dir[$dirNum]." for $msec milliseconds");
                     ?>
                 </div>
             </div>
