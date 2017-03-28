@@ -3,7 +3,9 @@
 
 $txt = $_GET['dir'] . ":".$_GET['sec'];
 $myfile = file_put_contents("data.txt",$txt);
-echo(file_get_contents("data.txt"))
+$dir;$msec;
+sscanf(file_get_contents("data.txt"),"%s:%d",$dir,$msec);
+echo("you told the bot to move $dir for $msec");
 ?>
 <html class="no-js" lang="">
     <head>
