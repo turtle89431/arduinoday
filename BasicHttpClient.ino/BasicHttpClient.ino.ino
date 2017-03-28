@@ -12,7 +12,8 @@
 #define LEFT 2 //left pin
 #define RIGHT 3 //right pin
 ESP8266WiFiMulti WiFiMulti;
-int index,last,msec,dir;
+int index2=0;
+int last=1;int msec=0;int dir=0;
 
 void moveDir(int d,int t){
     switch(d){
@@ -54,11 +55,12 @@ void setup() {
         delay(1000);
     }
 //network and password
-    WiFiMulti.addAP("SSID", "PASSWORD");
+    WiFiMulti.addAP("cit", "H@rlan817");
     last=0;
 }
 
 void loop() {
+  char delimiter=' ';
     // wait for WiFi connection
     if((WiFiMulti.run() == WL_CONNECTED)) {
 
@@ -75,15 +77,23 @@ void loop() {
         if(httpCode > 0) {
             // HTTP header has been send and Server response header has been handled
             USE_SERIAL.printf("[HTTP] GET... code: %d\n", httpCode);
-
+            int boundLow=0;
+            int boundHigh=0;
             // file found at server
             if(httpCode == HTTP_CODE_OK) {
                 String payload = http.getString();
                 USE_SERIAL.println(payload);
-                sscanf(payload,"%d %d : %d",index,dir,msec);
-                if(index>last){
+                //sscanf(payload.c_str(),"%d %d : %d",&index2,&dir,&msec);
+                if(payload.length()>0){
+                  boundLow = payload.indexOf(' ');
+                  index2 = payload.substring(0, boundLow).toInt();
+                  boundHigh = payload.indexOf(delimiter, boundLow+1);
+                  dir = payload.substring(boundLow+1, boundHigh).toInt();
+                  boundLow = payload.indexOf(delimiter, boundHigh+1);
+                  msec = payload.substring(boundHigh+1, boundLow).toInt();
+                if(index2 != last){
                   moveDir(dir,msec);  
-                }
+                }}
             }
         } else {
             USE_SERIAL.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());

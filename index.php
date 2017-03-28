@@ -7,7 +7,7 @@ $dirNum; // remove $ and add int datatype
 $msec; // remove $ and add int datatype
 //on ardurino swap $ for &
 sscanf(file_get_contents("data.txt"),"%d %d : %d",$index,$dirNum,$msec);
-$txt = $index +1 ." ".$_GET['dir'] . " : ".$_GET['sec'];
+$txt = $index +1 ." ".$_GET['dir'] . " ".$_GET['sec'];
 $myfile = file_put_contents("data.txt",$txt);
 
 ?>
@@ -35,9 +35,14 @@ $myfile = file_put_contents("data.txt",$txt);
         <!-- Add your site or application content here -->
         <div id="page">
             <div class="container">
-            <?php if($_GET['dir'] && $_GET['sec']) {$divSize="6";} else {$divSize="12";} ?>
+            <?php if( $_GET['sec']) {$divSize="6";} else {$divSize="12";} ?>
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get" class="col-md-<?=$divSize?>">
-                <input type="radio" name="dir" value="0">&uarr;<br>
+                <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3"><input type="radio" name="dir" value="0">&uarr;<br></div></div>
+                <div class="col-md-3"></div>
+                </div>
+                
                 <input type="radio" name="dir" value="1">&darr;<br>
                 <input type="radio" name="dir" value="2">&larr;<br>
                 <input type="radio" name="dir" value="3">&rarr;<br>
