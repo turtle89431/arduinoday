@@ -1,10 +1,10 @@
 <!doctype html>
 <?php
 
-$txt = $_GET['dir'] . ":".$_GET['sec'];
+$txt = $_GET['dir'] . " : ".$_GET['sec'];
 $myfile = file_put_contents("data.txt",$txt);
 $dir;$msec;
-sscanf(file_get_contents("data.txt"),"%s:%d",$dir,$msec);
+sscanf(file_get_contents("data.txt"),"%s : %d",$dir,$msec);
 echo("you told the bot to move $dir for $msec");
 ?>
 <html class="no-js" lang="">
@@ -30,9 +30,9 @@ echo("you told the bot to move $dir for $msec");
         <!-- Add your site or application content here -->
         <div id="page">
             <?php
-            var_dump($_GET)
+
             ?>
-            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> onsubmit=sendDir()>
+            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get">
                 <input type="radio" name="dir" value="up">&uarr;<br>
                 <input type="radio" name="dir" value="down">&darr;<br>
                 <input type="radio" name="dir" value="left">&larr;<br>
