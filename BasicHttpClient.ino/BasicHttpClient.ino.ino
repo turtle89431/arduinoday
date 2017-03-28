@@ -44,7 +44,7 @@ void setup() {
     pinMode(DOWN,OUTPUT);
     pinMode(LEFT,OUTPUT);
     pinMode(DOWN,OUTPUT);
-    USE_SERIAL.begin(115200);
+    USE_SERIAL.begin(9600);
     USE_SERIAL.println();
     USE_SERIAL.println();
     USE_SERIAL.println();
@@ -55,13 +55,14 @@ void setup() {
         delay(1000);
     }
 //network and password
-    WiFiMulti.addAP("cit", "H@rlan817");
+    WiFiMulti.addAP("cit");
     last=0;
 }
 
 void loop() {
   char delimiter=' ';
     // wait for WiFi connection
+    USE_SERIAL.print("hello");
     if((WiFiMulti.run() == WL_CONNECTED)) {
 
         HTTPClient http;
@@ -72,7 +73,7 @@ void loop() {
 
         USE_SERIAL.print("[HTTP] GET...\n");
          int httpCode = http.GET();
-
+        USE_SERIAL.print(httpCode);
         // httpCode will be negative on error
         if(httpCode > 0) {
             // HTTP header has been send and Server response header has been handled
@@ -80,6 +81,7 @@ void loop() {
             int boundLow=0;
             int boundHigh=0;
             // file found at server
+            USE_SERIAL.println(httpCode);
             if(httpCode == HTTP_CODE_OK) {
                 String payload = http.getString();
                 USE_SERIAL.println(payload);
