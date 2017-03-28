@@ -3,7 +3,10 @@
 
 $txt = $_GET['dir'] . " : ".$_GET['sec'];
 $myfile = file_put_contents("data.txt",$txt);
-$dir;$msec;
+
+$dir; // remove $ and add string datatype
+$msec; // remove $ and add int datatype
+//on ardurino swap $ for &
 sscanf(file_get_contents("data.txt"),"%s : %d",$dir,$msec);
 echo("you told the bot to move $dir for $msec");
 ?>
