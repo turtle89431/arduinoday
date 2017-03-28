@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="47bccaab-701e-418c-a056-10dedbfa9399" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,13 +20,13 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+            <state relative-caret-position="333">
+              <caret line="23" column="46" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
               <folding>
-                <element signature="e#1024#1030#1" expanded="true" />
-                <element signature="e#1095#1101#1" expanded="true" />
-                <element signature="e#1166#1172#1" expanded="true" />
-                <element signature="e#1238#1244#1" expanded="true" />
+                <element signature="e#1043#1049#1" expanded="true" />
+                <element signature="e#1114#1120#1" expanded="true" />
+                <element signature="e#1185#1191#1" expanded="true" />
+                <element signature="e#1257#1263#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +60,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -138,12 +137,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490672052804</updated>
-      <workItem from="1490672054061" duration="1244000" />
+      <workItem from="1490672054061" duration="1447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1244000" />
+    <option name="totallyTimeSpent" value="1447000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="43" width="1260" height="702" extended-state="0" />
@@ -196,13 +195,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        <state relative-caret-position="333">
+          <caret line="23" column="46" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
           <folding>
-            <element signature="e#1024#1030#1" expanded="true" />
-            <element signature="e#1095#1101#1" expanded="true" />
-            <element signature="e#1166#1172#1" expanded="true" />
-            <element signature="e#1238#1244#1" expanded="true" />
+            <element signature="e#1043#1049#1" expanded="true" />
+            <element signature="e#1114#1120#1" expanded="true" />
+            <element signature="e#1185#1191#1" expanded="true" />
+            <element signature="e#1257#1263#1" expanded="true" />
           </folding>
         </state>
       </provider>
