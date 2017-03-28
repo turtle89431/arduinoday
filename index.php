@@ -1,7 +1,11 @@
 <!doctype html>
 <?php
-
-$txt = $_GET['dir'] . " : ".$_GET['sec'];
+$index;
+$dir; // remove $ and add string datatype
+$msec; // remove $ and add int datatype
+//on ardurino swap $ for &
+sscanf(file_get_contents("data.txt"),"%d %s : %d",$index,$dir,$msec);
+$txt = "0 ".$_GET['dir'] . " : ".$_GET['sec'];
 $myfile = file_put_contents("data.txt",$txt);
 
 ?>
@@ -41,11 +45,7 @@ $myfile = file_put_contents("data.txt",$txt);
                 <div class="col-md-<?=$divSize?>">
                     <?php
 
-                    $dir; // remove $ and add string datatype
-                    $msec; // remove $ and add int datatype
-                    //on ardurino swap $ for &
-                    sscanf(file_get_contents("data.txt"),"%s : %d",$dir,$msec);
-                    echo("you told the bot to move $dir for $msec");
+                    echo("you told the bot to move $dir for $msec milliseconds");
                     ?>
                 </div>
             </div>
