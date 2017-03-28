@@ -4,11 +4,6 @@
 $txt = $_GET['dir'] . " : ".$_GET['sec'];
 $myfile = file_put_contents("data.txt",$txt);
 
-$dir; // remove $ and add string datatype
-$msec; // remove $ and add int datatype
-//on ardurino swap $ for &
-sscanf(file_get_contents("data.txt"),"%s : %d",$dir,$msec);
-echo("you told the bot to move $dir for $msec");
 ?>
 <html class="no-js" lang="">
     <head>
@@ -23,6 +18,7 @@ echo("you told the bot to move $dir for $msec");
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -32,24 +28,33 @@ echo("you told the bot to move $dir for $msec");
 
         <!-- Add your site or application content here -->
         <div id="page">
-            <?php
-
-            ?>
-            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get">
+            <div class="container">
+            <?php if($_GET['dir'] && $_GET['sec']) {$divSize="6";} else {$divSize="12";} ?>
+            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get" class="col-md-<?=$divSize?>">
                 <input type="radio" name="dir" value="up">&uarr;<br>
                 <input type="radio" name="dir" value="down">&darr;<br>
                 <input type="radio" name="dir" value="left">&larr;<br>
                 <input type="radio" name="dir" value="right">&rarr;<br>
                 <input type="number" name="sec">
                 <input type="submit">
-
             </form>
+                <div class="col-md-<?=$divSize?>">
+                    <?php
+
+                    $dir; // remove $ and add string datatype
+                    $msec; // remove $ and add int datatype
+                    //on ardurino swap $ for &
+                    sscanf(file_get_contents("data.txt"),"%s : %d",$dir,$msec);
+                    echo("you told the bot to move $dir for $msec");
+                    ?>
+                </div>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
 </html>
