@@ -1,4 +1,10 @@
 <!doctype html>
+<?php
+
+$txt = $_GET['dir'] . ":".$_GET['sec'];
+$myfile = file_put_contents("data.txt",$txt);
+echo(file_get_contents("data.txt"))
+?>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
