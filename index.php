@@ -21,6 +21,9 @@
 
         <!-- Add your site or application content here -->
         <div id="page">
+            <?php
+            var_dump($_GET)
+            ?>
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> onsubmit=sendDir()>
                 <input type="radio" name="dir" value="up">&uarr;<br>
                 <input type="radio" name="dir" value="down">&darr;<br>
