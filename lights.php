@@ -40,7 +40,7 @@ if($useron){
             $.each($("input[name='on']:checked"), function(){
                 favorite.push($(this).val());
             });
-            $.get("lights.php"+ favorite.join(", "));
+            window.location = "http://arduinoday.azurewebsites.net/lights.php?on=" + favorite.join(",")
         });
     });
 </script>
