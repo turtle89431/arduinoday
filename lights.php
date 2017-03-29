@@ -30,7 +30,7 @@ if($useron){
                                                                                               value="5"></div>
     <div>6<input type="checkbox" name="on[6]" value="6">7<input type="checkbox" name="on[7]" value="7">8<input type="checkbox" name="on[8]"
                                                                                               value="8"></div>
-    <input type="submit" value="">
+    <input type="submit" value="submit">
 </form>
 </body>
 </html>
