@@ -23,7 +23,7 @@ if($useron){
     <title>Document</title>
 </head>
 <body>
-<form action=<?php echo ($_SERVER["PHP_SELF"]); ?> method="get">
+<form action="lights.php" method="get">
     <div>0<input type="checkbox" name="on[0]" value="0">1<input type="checkbox" name="on[1]" value="1">2<input type="checkbox" name="on[2]"
                                                                                               value="2"></div>
     <div>3<input type="checkbox" name="on[3]" value="3">4<input type="checkbox" name="on[4]" value="4">5<input type="checkbox" name="on[5]"
