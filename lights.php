@@ -24,13 +24,25 @@ if($useron){
 </head>
 <body>
 <form action="lights.php" method="get">
-    <div>0<input type="checkbox" name="on[0]" value="0"/>1<input type="checkbox" name="on[1]" value="1"/>2<input type="checkbox" name="on[2]"
+    <div>0<input type="checkbox" name="on" value="0"/>1<input type="checkbox" name="on" value="1"/>2<input type="checkbox" name="on"
                                                                                               value="2"/></div>
-    <div>3<input type="checkbox" name="on[3]" value="3"/>4<input type="checkbox" name="on[4]" value="4"/>5<input type="checkbox" name="on[5]"
+    <div>3<input type="checkbox" name="on" value="3"/>4<input type="checkbox" name="on" value="4"/>5<input type="checkbox" name="on"
                                                                                               value="5"/></div>
-    <div>6<input type="checkbox" name="on[6]" value="6"/>7<input type="checkbox" name="on[7]" value="7"/>8<input type="checkbox" name="on[8]"
+    <div>6<input type="checkbox" name="on" value="6"/>7<input type="checkbox" name="on" value="7"/>8<input type="checkbox" name="on"
                                                                                               value="8"/></div>
     <input type="submit" value="submit"/>
 </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("button").click(function(){
+            var favorite = [];
+            $.each($("input[name='on']:checked"), function(){
+                favorite.push($(this).val());
+            });
+            alert("My favourite sports are: " + favorite.join(", "));
+        });
+    });
+</script>
 </body>
 </html>
