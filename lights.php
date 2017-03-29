@@ -6,9 +6,13 @@
  * Time: 9:22 PM
  */
 $lights = [16,5,4,0,2,14,12,13,15,3,1];
-//$useron=($_GET['on'])?$_GET['on']:null;
+$useron=($_GET['on'])?$_GET['on']:null;
 $pins;
-
+$useron=explode(',',$useron);
+foreach ($useron as $p){
+    $pins[]=$useron[$p];
+}
+var_dump($pins);
 ?>
 <!doctype html>
 <html lang="en">
