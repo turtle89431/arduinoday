@@ -33,6 +33,7 @@ void setup() {
   HTTPClient http;
  http.begin("http://arduinoday.azurewebsites.net/");
   Serial.println(http.GET());
+  pinMode(0,OUTPUT);
 }
 
 void loop() {
@@ -40,7 +41,7 @@ void loop() {
  
     HTTPClient http;  //Declare an object of class HTTPClient
  
-    http.begin("http://arduinoday.azurewebsites.net/data.txt");  //Specify request destination
+    http.begin("http://arduinoday.azurewebsites.net/lights.txt");  //Specify request destination
     int httpCode = http.GET();                                                                  //Send the request
  
     if (httpCode > 0) { //Check the returning code
@@ -48,18 +49,24 @@ void loop() {
       String payload = http.getString();   //Get the request response payload
       Serial.println(payload);                     //Print the response payload
       if(payload.length()>0){
-                  boundLow = payload.indexOf(':');
+                  boundLow = payload.indexOf(',');
                   index2 = payload.substring(0, boundLow).toInt();
                   boundHigh = payload.indexOf(delimiter, boundLow+1);
                   dir = payload.substring(boundLow+1, boundHigh).toInt();
                   boundLow = payload.indexOf(delimiter, boundHigh+1);
                   msec = payload.substring(boundHigh+1, boundLow).toInt();
+                  Serial.println(index2);
+      if(index2==16){
+        digitalWrite(0,HIGH);
+        delay(1000);
+        digitalWrite(0,LOW);
+      }
                   }
                   Serial.printf("index: %d, dir: %d time%d",index2,dir,msec);
     }
  
     http.end();   //Close connection
- 
+    
   }
-  delay(15000);
+  delay(1000);
 }
