@@ -12,7 +12,7 @@ $useron=explode(',',$useron);
 foreach ($useron as $p){
     $pins[]=$lights[$p];
 }
-file_put_contents("lights.txt",$pins);
+file_put_contents("lights.txt",implode(",",$pins));
 ?>
 <!doctype html>
 <html lang="en">
