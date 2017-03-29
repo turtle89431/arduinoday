@@ -9,7 +9,8 @@ $lights = [16,5,4,0,2,14,12,13,15,3,1];
 $useron=($_GET['on'])?$_GET['on']:null;
 $pins;
 if($useron){
-    $pins=explode(",",$useron);
+    //$pins=explode(",",$useron);
+    var_dump($pins);
 }
 ?>
 <!doctype html>
@@ -29,6 +30,7 @@ if($useron){
                                                                                               id=""></div>
     <div>6<input type="checkbox" name="" id="">7<input type="checkbox" name="" id="">8<input type="checkbox" name=""
                                                                                               id=""></div>
+    <input type="submit" value="">
 </form>
 </body>
 </html>
