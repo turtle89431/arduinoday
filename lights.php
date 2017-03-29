@@ -37,9 +37,7 @@ $pins;
             $.each($("input[name='on']:checked"), function(){
                 favorite.push($(this).val());
             });
-            $.get("lights.php",JSON.stringify(favorite,2,null),data=>{
-                console.log(data);
-            })
+            window.location = "http://arduinoday.azurewebsites.net/lights.php?on=" + favorite.join(",")
         });
     });
 </script>
