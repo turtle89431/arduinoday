@@ -24,11 +24,11 @@ if($useron){
 </head>
 <body>
 <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get">
-    <div>0<input type="checkbox" name="on[]" value="0">1<input type="checkbox" name="on[]" value="1">2<input type="checkbox" name="on[]"
+    <div>0<input type="checkbox" name="on" value="0">1<input type="checkbox" name="on" value="1">2<input type="checkbox" name="on"
                                                                                               value="2"></div>
-    <div>3<input type="checkbox" name="on[]" value="3">4<input type="checkbox" name="on[]" value="4">5<input type="checkbox" name="on[]"
+    <div>3<input type="checkbox" name="on" value="3">4<input type="checkbox" name="on" value="4">5<input type="checkbox" name="on"
                                                                                               value="5"></div>
-    <div>6<input type="checkbox" name="on[]" value="6">7<input type="checkbox" name="on[]" value="7">8<input type="checkbox" name="on[]"
+    <div>6<input type="checkbox" name="on" value="6">7<input type="checkbox" name="on" value="7">8<input type="checkbox" name="on"
                                                                                               value="8"></div>
     <input type="submit" value="">
 </form>
