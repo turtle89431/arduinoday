@@ -37,7 +37,7 @@ $pins;
             $.each($("input[name='on']:checked"), function(){
                 favorite.push($(this).val());
             });
-            $.get("lights.php",JSON.stringify(favorite),data=>{
+            $.get("lights.php",JSON.stringify(favorite,2,null),data=>{
                 console.log(data);
             })
         });
