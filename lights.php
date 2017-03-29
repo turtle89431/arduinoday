@@ -10,7 +10,7 @@ $useron=($_GET['on'])?$_GET['on']:null;
 $pins;
 $useron=explode(',',$useron);
 foreach ($useron as $p){
-    $pins[]=$useron[$p];
+    $pins[]=$lights[$p];
 }
 var_dump($pins);
 ?>
