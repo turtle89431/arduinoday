@@ -20,7 +20,7 @@ $pins;
     <title>Document</title>
 </head>
 <body>
-<?php print_r($_REQUEST);?>
+<?php var_dump($_GET['on']);?>
     <div>0<input type="checkbox" name="on" value="0"/>1<input type="checkbox" name="on" value="1"/>2<input type="checkbox" name="on"
                                                                                               value="2"/></div>
     <div>3<input type="checkbox" name="on" value="3"/>4<input type="checkbox" name="on" value="4"/>5<input type="checkbox" name="on"
