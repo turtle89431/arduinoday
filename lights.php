@@ -11,6 +11,8 @@ $pins;
 if($useron){
     //$pins=explode(",",$useron);
     var_dump($pins);
+}else{
+    var_dump($_GET);
 }
 ?>
 <!doctype html>
