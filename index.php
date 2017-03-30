@@ -31,13 +31,10 @@ if($_POST) {
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
+                <a class="navbar-brand" href="#">MoveBot</a>
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
             </ul>
         </div>
     </nav>
@@ -54,9 +51,9 @@ if($_POST) {
                     <input type="range" name="Left" id="" step="5"></div>
                 <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-5">
-                    <h2>Right</h2>
+                    <h2>Right Wheel</h2>
                     <input type="range" name="Right" id="" step="5"></div>
-                <input type="submit" value="">
+                <input type="submit" value="Make Bot Go!">
             </form>
                 <div class="col-md-4">
                     <div class="embed-responsive embed-responsive-16by9">
