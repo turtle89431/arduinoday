@@ -287,6 +287,6 @@ input[type=submit]{
     color:#fff;
     background: #727272;
 }
-.fb{
-    border: solid #000 2px;
+.fb input[type=number]{
+    border: 3px #000 solid;
 }
