@@ -48,9 +48,9 @@ if($_POST) {
         <!-- Add your site or application content here -->
         <div id="page">
             <div class="container-fluid">
-                <div class="panel panel-default col-md-8">
+                <div class="panel panel-default col-md-7">
                     <div class="panel-body">
-            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" class="col-md-8">
+            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" >
                 <div class="col-md-5">
                     <h2>Left Wheel</h2>
                     <input type="range" name="Left" id="" step="5"></div>
@@ -63,7 +63,7 @@ if($_POST) {
 
             </form>
                     </div></div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="embed-responsive embed-responsive-16by9">
                     <video controls>
                         <source src="video.mp4" type="video/mp4">
