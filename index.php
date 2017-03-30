@@ -5,10 +5,10 @@ if($_POST) {
     $l = $_POST['Left'];
     $r = $_POST['Right'];
     $t = $_POST['time'];
-    $txt['i'] = $i.",";
-    $txt['l']=$l.",";
-    $txt['r']=$r.",";
-    $txt['time'] = $t;
+    $txt.= $i.",";
+    $txt.=$l.",";
+    $txt.=$r.",";
+    $txt.= $t;
     $myfile = file_put_contents("data.txt", $txt);
 }
 ?>
