@@ -1,15 +1,14 @@
 <!doctype html>
 <?php
-$index;
-
-$dir=["up","down","left","right"];// for page only
-$dirNum; // remove $ and add int datatype
-$msec; // remove $ and add int datatype
-//on ardurino swap $ for &
-sscanf(file_get_contents("data.txt"),"%d %d : %d",$index,$dirNum,$msec);
-$txt = $index +1 .":".$_GET['dir'] . ":".$_GET['sec'];
-$myfile = file_put_contents("data.txt",$txt);
-
+if($_POST) {
+    $i;
+    $l = $_POST['Left'];
+    $r = $_POST['Right'];
+    $txt['i'] = $i;
+    $txt['l']=$l;
+    $txt['r']=$r;
+    $myfile = file_put_contents("data.txt", $txt);
+}
 ?>
 <html class="no-js" lang="">
     <head>
@@ -35,14 +34,14 @@ $myfile = file_put_contents("data.txt",$txt);
         <!-- Add your site or application content here -->
         <div id="page">
             <div class="container">
-            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get" class="col-md-8">
+            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" class="col-md-8">
                 <div class="col-md-5">
                     <h2>Left Wheel</h2>
-                    <input type="range" name="Left" id=""></div>
-                <div class="col-md-2">&mbsp;</div>
+                    <input type="range" name="Left" id="" step="5"></div>
+                <div class="col-md-2">&nbsp;</div>
                 <div class="col-md-5">
                     <h2>Right</h2>
-                    <input type="range" name="Right" id=""></div>
+                    <input type="range" name="Right" id="" step="5"></div>
             </form>
                 <div class="col-md-4">
                     <video src="" width="100%"></video>
