@@ -282,5 +282,8 @@ textarea {
 }
 body{
     background: #000;
-    color: #ffe0b3;
+}
+input[type=submit]{
+    color:#fff;
+    background: #727272;
 }
