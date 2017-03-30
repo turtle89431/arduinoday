@@ -45,7 +45,7 @@ if($_POST) {
 
         <!-- Add your site or application content here -->
         <div id="page">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="panel panel-default col-md-8">
                     <div class="panel-body">
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" class="col-md-8">
