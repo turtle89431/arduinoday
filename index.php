@@ -2,7 +2,7 @@
 <?php
 if($_POST) {
     $last = explode(",",file_get_contents("data.txt"));
-    var_dump($last);
+    //var_dump($last);
     $i=($last[0])?intval($last[0]) +1:1;
     $l = $_POST['Left'];
     $r = $_POST['Right'];
@@ -48,6 +48,7 @@ if($_POST) {
         <![endif]-->
 
         <!-- Add your site or application content here -->
+        <div><?=file_get_contents("data.txt")?></div>
         <div id="page">
             <div class="container-fluid">
                 <div class="panel panel-default col-md-7">
