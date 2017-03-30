@@ -58,8 +58,8 @@ if($_POST) {
                 <div class="col-md-5">
                     <h2>Right Wheel</h2>
                     <input type="range" name="Right" id="" step="5"></div>
-                <div class="col-md-6"><span>Time In Milliseconds</span><input type="number" name="time" id="" min="0" max="1000"></div>
-                <div class="col-md-6"><input type="submit" value="Make Bot Go!"></div>
+                <div class="col-md-9"><span>Time In Milliseconds</span><input type="number" name="time" id="" min="0" max="1000"></div>
+                <div class="col-md-3"><input type="submit" value="Make Bot Go!"></div>
 
             </form>
                     </div></div>
