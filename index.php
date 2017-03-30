@@ -52,11 +52,11 @@ if($_POST) {
                 <div class="col-md-5">
                     <h2>Left Wheel</h2>
                     <input type="range" name="Left" id="" step="5"></div>
-                <div class="col-md-2">&nbsp;</div>
+                <div class="col-md-2"><input type="submit" value="Make Bot Go!"></div>
                 <div class="col-md-5">
                     <h2>Right Wheel</h2>
                     <input type="range" name="Right" id="" step="5"></div>
-                <input type="submit" value="Make Bot Go!">
+
             </form>
                     </div></div>
                 <div class="col-md-4">
