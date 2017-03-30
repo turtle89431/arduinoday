@@ -2,6 +2,7 @@
 <?php
 if($_POST) {
     $last = explode(",",file_get_contents("data.txt"));
+    var_dump($last);
     $i=($last[0])?$last[0] +1:0;
     $l = $_POST['Left'];
     $r = $_POST['Right'];
