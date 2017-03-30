@@ -46,6 +46,8 @@ if($_POST) {
         <!-- Add your site or application content here -->
         <div id="page">
             <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-body">
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" class="col-md-8">
                 <div class="col-md-5">
                     <h2>Left Wheel</h2>
@@ -56,6 +58,7 @@ if($_POST) {
                     <input type="range" name="Right" id="" step="5"></div>
                 <input type="submit" value="Make Bot Go!">
             </form>
+                    </div></div>
                 <div class="col-md-4">
                     <div class="embed-responsive embed-responsive-16by9">
                     <video controls>
