@@ -35,25 +35,17 @@ $myfile = file_put_contents("data.txt",$txt);
         <!-- Add your site or application content here -->
         <div id="page">
             <div class="container">
-            <?php if( $_GET['sec']) {$divSize="6";} else {$divSize="12";} ?>
-            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get" class="col-md-<?=$divSize?>">
-                <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-3"><input type="radio" name="dir" value="0">&uarr;<br></div></div>
-                <div class="col-md-3"></div>
-                </div>
-                
-                <input type="radio" name="dir" value="1">&darr;<br>
-                <input type="radio" name="dir" value="2">&larr;<br>
-                <input type="radio" name="dir" value="3">&rarr;<br>
-                <input type="number" name="sec">
-                <input type="submit">
+            <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="get" class="col-md-8">
+                <div class="col-md-5">
+                    <h2>Left Wheel</h2>
+                    <input type="range" name="Left" id=""></div>
+                <div class="col-md-2">&mbsp;</div>
+                <div class="col-md-5">
+                    <h2>Right</h2>
+                    <input type="range" name="Right" id=""></div>
             </form>
-                <div class="col-md-<?=$divSize?>">
-                    <?php
-                    
-                    echo("you told the bot to move ".$dir[$dirNum]." for $msec milliseconds");
-                    ?>
+                <div class="col-md-4">
+                    <video src="" width="100%"></video>
                 </div>
             </div>
         </div>
