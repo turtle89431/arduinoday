@@ -46,8 +46,8 @@ if($_POST) {
             </form>
                 <div class="col-md-4">
                     <div class="embed-responsive embed-responsive-16by9">
-                    <video controls poster="/img/offline.jpg" class="embed-responsive embed-responsive-16by9">
-                        <source src="#" type="video/mp4">
+                    <video controls>
+                        <source src="video.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
