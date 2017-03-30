@@ -1,14 +1,15 @@
 <!doctype html>
 <?php
 if($_POST) {
-    $i;
+    $last = explode(",",file_get_contents("data.txt"));
+    $i=($last[0])?$last[0] +1:0;
     $l = $_POST['Left'];
     $r = $_POST['Right'];
     $t = $_POST['time'];
     $txt.= $i.",";
     $txt.=$l.",";
     $txt.=$r.",";
-    $txt.= $t;
+    $txt.= ($t)?$t:0;
     $myfile = file_put_contents("data.txt", $txt);
 }
 ?>
