@@ -42,6 +42,7 @@ if($_POST) {
                 <div class="col-md-5">
                     <h2>Right</h2>
                     <input type="range" name="Right" id="" step="5"></div>
+                <input type="submit" value="">
             </form>
                 <div class="col-md-4">
                     <video src="" width="100%"></video>
