@@ -45,7 +45,10 @@ if($_POST) {
                 <input type="submit" value="">
             </form>
                 <div class="col-md-4">
-                    <video src="" width="100%"></video>
+                    <video controls poster="/img/offline.jpg">
+                        <source src="#" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
