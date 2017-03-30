@@ -40,6 +40,7 @@ if($_POST) {
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">نقل الروبوت</a></li>
             </ul>
         </div>
     </nav>
