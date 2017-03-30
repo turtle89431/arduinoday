@@ -286,6 +286,7 @@ body{
 input[type=submit]{
     color:#fff;
     background: #727272;
+    width: 100%;
 }
 .fb input[type=number]{
     border: 2px #000 solid;
