@@ -292,3 +292,6 @@ input[type=submit]{
     border: 2px #000 solid;
     width: 100%;
 }
+#degPanel{
+    display: none;
+}

@@ -53,21 +53,21 @@ if($_POST) {
                     <div class="panel-body">
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" >
                 <div class="col-md-4">
-                    <h4><input type="radio" name="dir" value="l"><br>Left - يسار</h4>
+                    <h4><input type="radio" name="dir" value="l" onclick="document.getElementById('degPanel').style.display='block'"><br>Left - يسار</h4>
                 </div>
                 <div class="col-md-4">
-                    <h4><input type="radio" name="dir" id="" value="f"><br>Forward -  أمام</h4>
+                    <h4><input type="radio" name="dir" id="" value="f" onclick="document.getElementById('degPanel').style.display='none'"><br>Forward -  أمام</h4>
                 </div>
                 <div class="col-md-4">
-                    <h4><input type="radio" name="dir" value="r"><br>Right -  يمين</h4>
+                    <h4><input type="radio" name="dir" value="r" onclick="document.getElementById('degPanel').style.display='block'"><br>Right -  يمين</h4>
                 </div>
-                <div class="row">
-                <div class="col-md-2"><input type="radio" name="ang" value="83">15</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="166">30</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="249">45</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="332">60</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="415">75</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="498">90</div>
+                <div class="row" id="degPanel">
+                <div class="col-md-2"><input type="radio" name="ang" value="83">15&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="166">30&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="249">45&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="332">60&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="415">75&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="498">90&deg;</div>
                 </div>
                 <div class="fb">
                 <div class="col-md-12"><input type="submit" value="Make Bot Go!"></div>
