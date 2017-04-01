@@ -49,7 +49,7 @@ if($_POST) {
         <div><?=file_get_contents("data.txt")?></div>
         <div id="page">
             <div class="container-fluid">
-                <div class="panel panel-default col-md-7">
+                <div class="panel panel-default col-md-4">
                     <div class="panel-body">
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" >
                 <div class="col-md-4">
@@ -72,7 +72,7 @@ if($_POST) {
                 </div>
             </form>
                     </div></div>
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="embed-responsive embed-responsive-16by9">
                     <video controls>
                         <source src="video.mp4" type="video/mp4">
