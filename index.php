@@ -2,8 +2,10 @@
 <?php
 if($_POST) {
     $txt;
+    $dir;
     if($_POST){
-        $dir = ($_POST['dir']) ? $_POST['dir']:0;
+        if($_POST['dir']){$dir=$_POST['dir'];}else{$dir=0;}
+        //$dir = ($_POST['dir']) ? $_POST['dir']:0;
         $ang = ($_POST['ang'])?$_POST['ang']:0;
         $txt =$dir . "," .$ang;
         $myfile = file_put_contents("data.txt", $txt);
