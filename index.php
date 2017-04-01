@@ -61,12 +61,14 @@ if($_POST) {
                 <div class="col-md-4">
                     <h4><input type="radio" name="dir" value="r">Right -  يمين</h4>
                 </div>
+                <div class="row">
                 <div class="col-md-2"><input type="radio" name="ang" value="83">15</div>
                 <div class="col-md-2"><input type="radio" name="ang" value="166">30</div>
                 <div class="col-md-2"><input type="radio" name="ang" value="249">45</div>
                 <div class="col-md-2"><input type="radio" name="ang" value="332">60</div>
                 <div class="col-md-2"><input type="radio" name="ang" value="415">75</div>
                 <div class="col-md-2"><input type="radio" name="ang" value="498">90</div>
+                </div>
                 <div class="fb">
                 <div class="col-md-12"><input type="submit" value="Make Bot Go!"></div>
                 </div>
