@@ -63,7 +63,7 @@ if($_POST) {
                     <h4><input type="radio" name="dir" value="l" onclick="document.getElementById('degPanel').style.display='block'"><br>Left - يسار</h4>
                 </div>
                 <div class="col-md-4">
-                    <h4><input type="radio" name="dir" id="" value="f" onclick="document.getElementById('degPanel').style.display='none'"><br>Forward -  أمام</h4>
+                    <h4><input type="radio" name="dir" id="" value="f" onclick="document.getElementById('degPanel').style.display='none'" checked><br>Forward -  أمام</h4>
                 </div>
                 <div class="col-md-4">
                     <h4><input type="radio" name="dir" value="r" onclick="document.getElementById('degPanel').style.display='block'"><br>Right -  يمين</h4>
