@@ -17,6 +17,8 @@ int boundLow=0;
 char dir;
 int  ang;
 char delimiter=',';
+String last;
+String indx;
 void setup()                                 // Built in initialization block
 {
   Serial.begin(115200);
@@ -60,6 +62,15 @@ void forward(int t){
   servoRight.detach();
   servoLeft.detach();
   }
+  void stopbot(){
+  servoRight.attach(rightPin);                      // Attach right signal to pin d5 gpio 14
+  servoRight.writeMicroseconds(1500);
+  servoLeft.attach(leftPin);                      // Attach left signal to pin d2 gpio 4
+  servoLeft.writeMicroseconds(1500);
+  delay(0);
+  servoRight.detach();
+  servoLeft.detach();
+  }
   void chdir(char d,int t){
   if(d=='l'){
     left(t);
@@ -86,12 +97,15 @@ void loop()                                  // Main loop auto-repeats
       Serial.println(payload);                     //Print the response payload
       if(payload.length()>0){
            boundLow = payload.indexOf(',');
-           dir = payload.substring(0, boundLow)[0];
+           dir = payload.substring(0, 1)[0];
+           indx = payload.substring(1, boundLow);
            ang = payload.substring(boundLow+1,payload.length()).toInt();
-           
-           chdir(dir,ang);}
+           if(last!=indx){
+           chdir(dir,ang);}else{
+            stopbot();
+            }
+           }
       }
-      http.begin("http://arduinoday.azurewebsites.net/done.php?done=9");
       delay(1000);
     }
     
