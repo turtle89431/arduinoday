@@ -67,7 +67,7 @@ if($_POST) {
                 <div class="col-md-4">
                     <h4><input type="radio" name="dir" value="r" onclick="document.getElementById('degPanel').style.display='block'"><br>Right -  يمين</h4>
                 </div>
-                <input type="hidden" name="index" value="1">
+                <input type="hidden" name="index" value="<?=$index++?>">
                 <div class="row" id="degPanel">
                 <div class="col-md-2"><input type="radio" name="ang" value="83">15&deg;</div>
                 <div class="col-md-2"><input type="radio" name="ang" value="166">30&deg;</div>
