@@ -3,7 +3,9 @@
 if($_POST) {
     $txt;
     if($_POST){
-        $txt =($_POST['dir']) ? $_POST['dir']:0 . "," .($_POST['ang'])?$_POST['ang']:0;
+        $dir = ($_POST['dir']) ? $_POST['dir']:0;
+        $ang = ($_POST['ang'])?$_POST['ang']:0;
+        $txt =$dir . "," .$ang;
         $myfile = file_put_contents("data.txt", $txt);
     }
     //$myfile = file_put_contents("data.txt", $txt);
