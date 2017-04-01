@@ -7,7 +7,7 @@ if($_POST) {
 
         if($_POST['dir']){$dir=$_POST['dir'];}else{$dir="0";}
         //$dir = ($_POST['dir']) ? $_POST['dir']:0;
-        $index=$_POST['index'];
+        $index=intval($_POST['index']);
         $ang = ($_POST['ang'])?$_POST['ang']:0;
         $txt =$dir .$index. "," .$ang;
         $myfile = file_put_contents("data.txt", $txt);

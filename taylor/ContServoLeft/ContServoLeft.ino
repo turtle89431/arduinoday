@@ -107,6 +107,7 @@ void loop()                                  // Main loop auto-repeats
            }
       }
       delay(1000);
+      last=indx;
     }
     
     
