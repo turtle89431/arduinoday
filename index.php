@@ -49,7 +49,7 @@ if($_POST) {
         <div><?=file_get_contents("data.txt")?></div>
         <div id="page">
             <div class="container-fluid">
-                <div class="panel panel-default col-md-4">
+                <div class="panel panel-default col-md-8">
                     <div class="panel-body">
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" >
                 <div class="col-md-4">
