@@ -1,17 +1,12 @@
 <!doctype html>
 <?php
 if($_POST) {
-    $last = explode(",",file_get_contents("data.txt"));
-    //var_dump($last);
-    $i=($last[0])?intval($last[0]) +1:1;
-    $l = $_POST['Left'];
-    $r = $_POST['Right'];
-    $t = $_POST['time'];
-    $txt.= $i.",";
-    $txt.=$l.",";
-    $txt.=$r.",";
-    $txt.= ($t)?$t:0;
-    $myfile = file_put_contents("data.txt", $txt);
+    $txt;
+    if($_POST){
+        $txt =$_POST['dir'].",".$_POST['ang'];
+        $myfile = file_put_contents("data.txt", $txt);
+    }
+    //$myfile = file_put_contents("data.txt", $txt);
 }
 ?>
 <html class="no-js" lang="">
@@ -57,17 +52,23 @@ if($_POST) {
                 <div class="panel panel-default col-md-7">
                     <div class="panel-body">
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" >
-                <div class="col-md-5">
-                    <h2>Left Wheel</h2>
-                    <input type="radio" name="dir"">&larr; يسار</div>
-                <div class="col-md-2">&nbsp;</div>
-                <div class="col-md-5">
-                    <h2>Right Wheel</h2>
-                    <input type="radio" name="dir"">&rarr; يمين</div>
-                <div><input type="radio" name="dir" id="">&uarr; أمام</div>
+                <div class="col-md-4">
+                    <h3><input type="radio" name="dir" value="l">Left - يسار</h3>
+                </div>
+                <div class="col-md-4">
+                    <h3><input type="radio" name="dir" id="" value="f">Forward -  أمام</h3>
+                </div>
+                <div class="col-md-4">
+                    <h3><input type="radio" name="dir" value="r">Right -  يمين</h3>
+                </div>
+                <div class="col-md-2"><input type="radio" name="ang" value="83">15</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="166">30</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="249">45</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="332">60</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="415">75</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="498">90</div>
                 <div class="fb">
-                <div class="col-md-6"><span>Time In Milliseconds<br>&nbsp;&nbsp;&nbsp;</span><input type="number" name="time" id="" min="0" max="1000"></div>
-                <div class="col-md-6"><input type="submit" value="Make Bot Go!"></div>
+                <div class="col-md-12"><input type="submit" value="Make Bot Go!"></div>
                 </div>
             </form>
                     </div></div>

@@ -38,7 +38,7 @@ void setup() {
 
 void loop() {
   if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
- 
+    digitalWrite(16,HIGH);
     HTTPClient http;  //Declare an object of class HTTPClient
  
     http.begin("http://arduinoday.azurewebsites.net/lights.txt");  //Specify request destination
@@ -66,7 +66,7 @@ void loop() {
     }
  
     http.end();   //Close connection
-    
+    digitalWrite(16,LOW);
   }
   delay(1000);
 }
