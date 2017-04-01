@@ -88,11 +88,13 @@ void loop()                                  // Main loop auto-repeats
            boundLow = payload.indexOf(',');
            dir = payload.substring(0, boundLow)[0];
            ang = payload.substring(boundLow+1,payload.length()).toInt();
-           chdir(dir,ang);
+           
+           chdir(dir,ang);}
       }
-      
+      http.begin("http://arduinoday.azurewebsites.net/done.php?done=9");
+      delay(1000);
     }
-    http.begin("http://arduinoday.azurewebsites.net/done.php?done=true");
     
-}}
+    
+}
 

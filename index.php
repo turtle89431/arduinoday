@@ -4,10 +4,12 @@ if($_POST) {
     $txt;
     $dir;
     if($_POST){
+
         if($_POST['dir']){$dir=$_POST['dir'];}else{$dir="0";}
         //$dir = ($_POST['dir']) ? $_POST['dir']:0;
+        $index=$_POST['index'];
         $ang = ($_POST['ang'])?$_POST['ang']:0;
-        $txt =$dir . "," .$ang;
+        $txt =$dir .$index. "," .$ang;
         $myfile = file_put_contents("data.txt", $txt);
     }
     //$myfile = file_put_contents("data.txt", $txt);
@@ -65,6 +67,7 @@ if($_POST) {
                 <div class="col-md-4">
                     <h4><input type="radio" name="dir" value="r" onclick="document.getElementById('degPanel').style.display='block'"><br>Right -  يمين</h4>
                 </div>
+                <input type="hidden" name="index" value=1>
                 <div class="row" id="degPanel">
                 <div class="col-md-2"><input type="radio" name="ang" value="83">15&deg;</div>
                 <div class="col-md-2"><input type="radio" name="ang" value="166">30&deg;</div>
