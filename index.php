@@ -53,13 +53,13 @@ if($_POST) {
                     <div class="panel-body">
             <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post" >
                 <div class="col-md-4">
-                    <h4><input type="radio" name="dir" value="l">Left - يسار</h4>
+                    <h4><input type="radio" name="dir" value="l"><br>Left - يسار</h4>
                 </div>
                 <div class="col-md-4">
-                    <h4><input type="radio" name="dir" id="" value="f">Forward -  أمام</h4>
+                    <h4><input type="radio" name="dir" id="" value="f"><br>Forward -  أمام</h4>
                 </div>
                 <div class="col-md-4">
-                    <h4><input type="radio" name="dir" value="r">Right -  يمين</h4>
+                    <h4><input type="radio" name="dir" value="r"><br>Right -  يمين</h4>
                 </div>
                 <div class="row">
                 <div class="col-md-2"><input type="radio" name="ang" value="83">15</div>
