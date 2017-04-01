@@ -42,18 +42,21 @@ void setup()                                 // Built in initialization block
 }
 
 void right(int t){
+  Serial.println("right");
   servoRight.attach(rightPin);                      // Attach right signal to pin d5 gpio 14
   servoRight.writeMicroseconds(1300);
   delay(t);
   servoRight.detach();
   }  
 void left(int t){
+  Serial.println("left");
   servoLeft.attach(leftPin);                      // Attach left signal to pin d2 gpio 4
   servoLeft.writeMicroseconds(1300);
   delay(t);
   servoLeft.detach();
   }
 void forward(int t){
+  Serial.println("for");
   servoRight.attach(rightPin);                      // Attach right signal to pin d5 gpio 14
   servoRight.writeMicroseconds(1300);
   servoLeft.attach(leftPin);                      // Attach left signal to pin d2 gpio 4
@@ -63,6 +66,7 @@ void forward(int t){
   servoLeft.detach();
   }
   void stopbot(){
+    Serial.println("stop");
   servoRight.attach(rightPin);                      // Attach right signal to pin d5 gpio 14
   servoRight.writeMicroseconds(1500);
   servoLeft.attach(leftPin);                      // Attach left signal to pin d2 gpio 4
@@ -77,7 +81,7 @@ void forward(int t){
     }else if(d=='r'){
     right(t);
     }else if(d=='f'){
-    forward(250);  
+    forward(1000);  
     }else{
       
     }
@@ -106,7 +110,7 @@ void loop()                                  // Main loop auto-repeats
             }
            }
       }
-      delay(1000);
+      delay(500);
       last=indx;
     }
     

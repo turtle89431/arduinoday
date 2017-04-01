@@ -6,6 +6,7 @@ if($_POST) {
     if($_POST){
 
         if($_POST['dir']){$dir=$_POST['dir'];}else{$dir="0";}
+
         //$dir = ($_POST['dir']) ? $_POST['dir']:0;
         $index=intval($_POST['index']);
         $ang = ($_POST['ang'])?$_POST['ang']:0;
@@ -69,12 +70,12 @@ if($_POST) {
                 </div>
                 <input type="hidden" name="index" value="<?= $index=$index+1 ?>">
                 <div class="row" id="degPanel">
-                <div class="col-md-2"><input type="radio" name="ang" value="83">15&deg;</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="166">30&deg;</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="249">45&deg;</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="332">60&deg;</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="415">75&deg;</div>
-                <div class="col-md-2"><input type="radio" name="ang" value="498">90&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="165">15&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="330">30&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="495">45&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="660">60&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="825">75&deg;</div>
+                <div class="col-md-2"><input type="radio" name="ang" value="1000">90&deg;</div>
                 </div>
                 <div class="fb">
                 <div class="col-md-12"><input type="submit" value="Make Bot Go!"></div>
