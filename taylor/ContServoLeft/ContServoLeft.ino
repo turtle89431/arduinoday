@@ -14,11 +14,8 @@ Servo servoRight;
 const char* ssid = "hotrod";
 const char* password = "pyramid100red";
 int boundLow=0;
-int boundHigh=0;
-int index2=0;
-int last=1;
-int msec=0;
-int dir=0;
+char dir;
+int  ang;
 char delimiter=',';
 void setup()                                 // Built in initialization block
 {
@@ -41,6 +38,7 @@ void setup()                                 // Built in initialization block
  http.begin("http://arduinoday.azurewebsites.net/");
   Serial.println(http.GET());        // 1.3 ms full speed clockwise
 }
+
 void right(int t){
   servoRight.attach(rightPin);                      // Attach right signal to pin d5 gpio 14
   servoRight.writeMicroseconds(1300);
@@ -61,6 +59,17 @@ void forward(int t){
   delay(t);
   servoRight.detach();
   servoLeft.detach();
+  }
+  void chdir(char d,int t){
+  if(d=='l'){
+    left(t);
+    }else if(d=='r'){
+    right(t);
+    }else if(d=='f'){
+    forward(250);  
+    }else{
+      
+    }
   }  
 void loop()                                  // Main loop auto-repeats
 {  
@@ -68,7 +77,7 @@ void loop()                                  // Main loop auto-repeats
  
     HTTPClient http;  //Declare an object of class HTTPClient
  
-    http.begin("http://arduinoday.azurewebsites.net/lights.txt");  //Specify request destination
+    http.begin("http://arduinoday.azurewebsites.net/data.txt");  //Specify request destination
     int httpCode = http.GET();                                                                  //Send the request
  
     if (httpCode > 0) { //Check the returning code
@@ -76,14 +85,14 @@ void loop()                                  // Main loop auto-repeats
       String payload = http.getString();   //Get the request response payload
       Serial.println(payload);                     //Print the response payload
       if(payload.length()>0){
-                  boundLow = payload.indexOf(',');
-                  index2 = payload.substring(0, boundLow).toInt();
-                  boundHigh = payload.indexOf(delimiter, boundLow+1);
-                  dir = payload.substring(boundLow+1, boundHigh).toInt();
-                  boundLow = payload.indexOf(delimiter, boundHigh+1);
-                  msec = payload.substring(boundHigh+1, boundLow).toInt();
-                  Serial.println(index2);
+           boundLow = payload.indexOf(',');
+           dir = payload.substring(0, boundLow)[0];
+           ang = payload.substring(boundLow+1,payload.length()).toInt();
+           chdir(dir,ang);
       }
+      
     }
+    http.begin("http://arduinoday.azurewebsites.net/done.php?done=true");
+    
 }}
 
