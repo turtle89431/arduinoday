@@ -16,13 +16,13 @@ class index
         $this->scripts = json_decode(file_get_contents("scripts.json"),true,2);
     }
     function getTitle(){
-        return $this->getTitle();
+        echo $this->getTitle();
     }
     function script($name)
     {
         if($this->scripts[$name]){
             $s=$this->scripts[$name];
-            return "<script src='$s'></script>";
+            echo "<script src='$s'></script>";
         }
     }
 }
