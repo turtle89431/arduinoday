@@ -17,7 +17,7 @@ class Page
         $this->scripts = json_decode(file_get_contents("scripts.json"),true,2);
     }
     function getTitle(){
-        echo $this->getTitle();
+        echo $this->title;
     }
     function script($name)
     {
