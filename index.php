@@ -1,35 +1,9 @@
-<?php
-
-/**
- * Created by PhpStorm.
- * User: cit
- * Date: 4/4/2017
- * Time: 8:30 AM
- */
-class index
-{
-    private $title;
-    public $scripts;
-    function __construct()
-    {
-        $this->title = "Butte College Arduino Day";
-        $this->scripts = json_decode(file_get_contents("scripts.json"),true,2);
-    }
-    function getTitle(){
-        echo $this->getTitle();
-    }
-    function script($name)
-    {
-        if($this->scripts[$name]){
-            $s=$this->scripts[$name];
-            echo "<script src='$s'></script>";
-        }
-    }
-}
-$page = new index;
-?>
 <!doctype html>
 <html lang="en">
+<?php
+include_once "page.php";
+$page = new Page();
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
