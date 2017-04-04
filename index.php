@@ -20,9 +20,13 @@ class index
     }
     function script($name)
     {
-
+        if($this->scripts[$name]){
+            $s=$this->scripts[$name];
+            return "<script src='$s'></script>";
+        }
     }
 }
+$page = new index();
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,12 +35,10 @@ class index
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title><?=$page->getTitle()?></title>
 </head>
 <body>
-<?
-$test = new index();
-var_dump($test->scripts);
-?>
+<?=$page->script("jquery")?>
+<?=$page->script("bootstrap")?>
 </body>
 </html>
