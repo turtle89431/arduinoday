@@ -26,7 +26,7 @@ class index
         }
     }
 }
-$page = new index();
+$page = new index;
 ?>
 <!doctype html>
 <html lang="en">
